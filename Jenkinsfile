@@ -40,10 +40,7 @@ node {
 			}else{
 			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
 			}
-		stages.sshagent(credentials:['bd9af915-939c-4ac6-839f-e5fb6e850dc1'])
-		{
-                        stages.sh "git push origin ${branchName}"
-                }
+	
 			  
             printf rmsg
             println('Hello from a Job DSL script!')
